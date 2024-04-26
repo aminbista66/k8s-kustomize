@@ -1,0 +1,16 @@
+resources:
+  - deployment.yaml
+  - service.yaml
+
+commonLabels:
+  app: nginx
+  environment: dev
+
+commonAnnotations:
+  app: kustom-annotation
+
+nameSuffix: -v1
+
+configMapGenerator:
+  - name: nginx-cm
+    env: config.properties
